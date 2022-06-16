@@ -8,11 +8,11 @@
         <version>2.7.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>payment</artifactId>
+    <groupId>com.trionix</groupId>
+    <artifactId>AgriMartOrder</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>payment</name>
-    <description>payment</description>
+    <name>AgriMartOrder</name>
+    <description>AgriMartOrder</description>
     <properties>
         <java.version>17</java.version>
     </properties>
