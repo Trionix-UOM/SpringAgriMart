@@ -23,7 +23,6 @@ public class CustomerController {
     }
     @DeleteMapping("/customers/{id}")
     public String deleteCustomer(@PathVariable String id){
-        System.out.println(id);
         return "deleteCustomer";
     }
     @PutMapping("/customers/{id}")
