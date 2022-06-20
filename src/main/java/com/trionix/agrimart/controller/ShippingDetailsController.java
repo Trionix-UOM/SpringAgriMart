@@ -1,7 +1,7 @@
-package com.trionix.agrimartorder.controller;
+package com.trionix.agrimart.controller;
 
-import com.trionix.agrimartorder.entity.ShippingDetails;
-import com.trionix.agrimartorder.repository.ShippingDetailsRepository;
+import com.trionix.agrimart.entity.ShippingDetails;
+import com.trionix.agrimart.repository.ShippingDetailsRepository;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

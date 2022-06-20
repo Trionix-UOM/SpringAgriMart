@@ -1,4 +1,4 @@
-package com.example.payment.dto;
+package com.trionix.agrimart.dto;
 
 import lombok.Data;
 

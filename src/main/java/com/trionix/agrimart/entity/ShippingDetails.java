@@ -1,10 +1,10 @@
-package com.trionix.agrimartorder.dto;
-import lombok.Data;
+package com.trionix.agrimart.entity;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Data
-public class ShippingDetailsDto {
-    private String shippingId;
+@Document("ShippingDetail")
+
+public class ShippingDetails {
+//    private String shippingId;
     private String fName;
     private String lName;
     private String address;
@@ -13,10 +13,10 @@ public class ShippingDetailsDto {
     private String zip;
     private String phone;
 
-    public ShippingDetailsDto(){
+    public ShippingDetails(){
     }
 
-    public ShippingDetailsDto(String shippingId, String fName, String lName, String address, String city, String province, String zip, String phone){
+    public ShippingDetails(String shippingId, String fName, String lName, String address, String city, String province, String zip, String phone){
 //        this.shippingId = shippingId;
         this.fName = fName;
         this.lName = lName;
