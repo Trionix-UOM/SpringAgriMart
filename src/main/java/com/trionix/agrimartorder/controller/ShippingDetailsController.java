@@ -2,14 +2,13 @@ package com.trionix.agrimartorder.controller;
 
 import com.trionix.agrimartorder.entity.ShippingDetails;
 import com.trionix.agrimartorder.repository.ShippingDetailsRepository;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
-@Document("ShippingDetails")
+//@Document("ShippingDetails")
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -29,7 +28,7 @@ public class ShippingDetailsController {
     public ResponseEntity<ShippingDetails> createOrders(@RequestBody ShippingDetails ShippingDetailsDto) {
         ShippingDetails shippingDetails=new ShippingDetails();
         shippingDetails.setFName(ShippingDetailsDto.getFName());
-        shippingDetails.setLName(ShippingDetailsDto.getLName());
+
         shippingDetails.setAddress(ShippingDetailsDto.getAddress());
         shippingDetails.setCity(ShippingDetailsDto.getCity());
         shippingDetails.setProvince(ShippingDetailsDto.getProvince());

@@ -1,40 +1,35 @@
 package com.trionix.agrimartorder.dto;
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 public class ShippingDetailsDto {
-    private String shippingId;
-    private String fName;
-    private String lName;
+
+    private String fullname;
     private String address;
     private String city;
     private String province;
-    private String zip;
-    private String phone;
+    private String zipcode;
+    private String phonenumber;
+
 
     public ShippingDetailsDto(){
     }
 
     public ShippingDetailsDto(String shippingId, String fName, String lName, String address, String city, String province, String zip, String phone){
 //        this.shippingId = shippingId;
-        this.fName = fName;
-        this.lName = lName;
+        this.fullname = fullname;
         this.address = address;
         this.city = city;
         this.province = province;
-        this.zip = zip;
-        this.phone = phone;
+        this.zipcode = zipcode;
+        this.phonenumber = phonenumber;
     }
 
 //    public String getSID(){ return shippingId; }
 //    public void setSID(String shippingId){ this.shippingId = shippingId; }
 
-    public String getFName(){ return fName; }
-    public void setFName(String fName){ this.fName = fName; }
-
-    public String getLName(){ return lName; }
-    public void setLName(String lName){ this.lName = lName; }
+    public String getFName(){ return fullname; }
+    public void setFName(String fullname){ this.fullname = fullname; }
 
     public String getAddress(){ return address; }
     public void setAddress(String address){ this.address = address; }
@@ -45,9 +40,9 @@ public class ShippingDetailsDto {
     public String getProvince(){ return province; }
     public void setProvince(String province){ this.province = province; }
 
-    public String getZip(){ return zip; }
-    public void setZip(String zip){ this.zip = zip; }
+    public String getZip(){ return zipcode; }
+    public void setZip(String zipcode){ this.zipcode = zipcode; }
 
-    public String getPhone(){ return phone; }
-    public void setPhone(String phone){ this.phone = phone; }
+    public String getPhone(){ return phonenumber; }
+    public void setPhone(String phonenumber){ this.phonenumber = phonenumber; }
 }
