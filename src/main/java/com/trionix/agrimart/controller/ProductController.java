@@ -23,26 +23,26 @@ public class ProductController {
         return ResponseEntity.ok(product);
     }
 
-        @GetMapping("/products")
-        public List<Product> getAllProducts () {
-        return productService.findAll();
-
-        }
-
-
-        @GetMapping("/products/{id}")
-        public Product getOneProduct (@PathVariable String id){
-            return productService.findOne(id);
-        }
-
-        @DeleteMapping("/products/{id}")
-        public void deleteProduct (@PathVariable String id){
-            productService.deleteOne(id);
-        }
-        @PutMapping("/products/{id}")
-        public Product updateProduct (@RequestBody NewProductDto body, @PathVariable String id){
-            return productService.updateOne(id, body);
-        }
+    @GetMapping("/products")
+    public List<Product> getAllProducts () {
+    return productService.findAll();
 
     }
+
+
+    @GetMapping("/products/{id}")
+    public Product getOneProduct (@PathVariable String id){
+        return productService.findOne(id);
+    }
+
+    @DeleteMapping("/products/{id}")
+    public void deleteProduct (@PathVariable String id){
+        productService.deleteOne(id);
+    }
+    @PutMapping("/products/{id}")
+    public Product updateProduct (@RequestBody NewProductDto body, @PathVariable String id){
+        return productService.updateOne(id, body);
+    }
+
+}
 
