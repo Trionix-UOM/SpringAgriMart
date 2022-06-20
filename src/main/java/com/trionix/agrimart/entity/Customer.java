@@ -1,4 +1,4 @@
-package com.example.agrimart_4.entity;
+package com.example.trionix.agrimart.entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
