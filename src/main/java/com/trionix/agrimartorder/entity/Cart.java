@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 @Data
 @NoArgsConstructor
@@ -11,7 +12,11 @@ import org.springframework.data.annotation.Id;
 public class Cart {
     @Id
     private String cardId;
-    private String productId;
-    private String quantity;
-    private String totalPrice;
+
+    @DBRef()
+    private Product product;
+
+    private double quantity;
+
+    private double totalPrice;
 }
