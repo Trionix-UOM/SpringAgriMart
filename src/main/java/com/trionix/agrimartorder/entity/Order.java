@@ -5,13 +5,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.time.LocalDateTime;
+
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
     @Id
     private String orderId;
-    private String productID;
-    private Integer sellerId;
-    private Integer shippingAddress;
+    private LocalDateTime orderDateTime;
+    private String productTitle;
+    private Double quantity;
+    private Double amount;
 }

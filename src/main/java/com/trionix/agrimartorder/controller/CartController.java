@@ -17,7 +17,7 @@ public class CartController {
     private final CartRepository cartRepository;
     private final ProductRepository productRepository;
     @PostMapping("/receiveToCart")
-    public String CreateCart(@RequestBody CartDto body)
+    public String createCart(@RequestBody CartDto body)
     {
         Optional<Cart> byProductProductId = cartRepository.findByProductProductId(body.getProductId());
         if(byProductProductId.isPresent()){
@@ -48,14 +48,14 @@ public class CartController {
     }
 
     @DeleteMapping("/receiveToCart/{cartId}")
-    public String DeleteCart(@PathVariable CartDto cartId)
+    public String deleteCart(@PathVariable CartDto cartId)
     {
         System.out.println(cartId);
         return "DeleteCart";
     }
 
     @PutMapping("/receiveToCart/{cartId}")
-    public String UpdateCart(@RequestBody CartDto body,@PathVariable String cartId)
+    public String updateCart(@RequestBody CartDto body,@PathVariable String cartId)
     {
         System.out.println(cartId);
         return "UpdateCart";

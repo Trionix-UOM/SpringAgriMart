@@ -5,27 +5,27 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class NewShippingAddressController {
     @PostMapping("/shipping")
-    public String CreateShippingDetails(@RequestBody NewShippingAddressDto body)
+    public String createShippingDetails(@RequestBody NewShippingAddressDto body)
     {
         System.out.println(body);
         return "CreateShippingDetails";
     }
 
     @GetMapping("/shipping")
-    public String GetAllShippingAddress()
+    public String getAllShippingAddress()
     {
         return "CreateShippingDetails";
     }
 
     @DeleteMapping("/shipping/{shippingId}")
-    public String DeleteShippingAddress(@PathVariable String shippingId)
+    public String deleteShippingAddress(@PathVariable String shippingId)
     {
         System.out.println(shippingId);
         return "DeleteShippingDetails";
     }
 
     @PutMapping("/shipping/{shippingId}")
-    public String UpdateShippingAddress(@RequestBody NewShippingAddressDto body, @PathVariable String shippingId)
+    public String updateShippingAddress(@RequestBody NewShippingAddressDto body, @PathVariable String shippingId)
     {
         System.out.println(body);
         System.out.println(shippingId);

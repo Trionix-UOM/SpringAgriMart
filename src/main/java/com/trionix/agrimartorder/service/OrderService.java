@@ -1,30 +1,16 @@
 package com.trionix.agrimartorder.service;
-import com.trionix.agrimartorder.dto.OrderDto;
+
+import com.trionix.agrimartorder.dto.NewOrderDto;
 import com.trionix.agrimartorder.entity.Order;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+public interface OrderService {
+    Order addOrder(NewOrderDto orderDto);
 
-@Service
-public class OrderService {
 
-    Order addOrder(OrderDto orderDto) {
-        return null;
-    }
+    void delete(String id);
 
-    Order updateOne(String id, OrderDto body) {
-        return null;
-    }
+    Order findOne(String id);
 
-    void deleteOne(String id) {
-
-    }
-
-    Order findOne(String id) {
-        return null;
-    }
-
-    List<Order> findAll() {
-        return null;
-    }
+    List<Order> findAll();
 }
