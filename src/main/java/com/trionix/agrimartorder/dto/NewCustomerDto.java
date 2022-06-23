@@ -2,17 +2,17 @@ package com.trionix.agrimartorder.dto;
 import lombok.Data;
 
 @Data
-public class CustomerDto {
+public class NewCustomerDto {
     private String firstName;
     private String lastName;
     private String age;
     private String phoneNumber;
     private String address;
 
-    public CustomerDto() {
+    public NewCustomerDto() {
     }
 
-    public CustomerDto(String firstName, String lastName, String age,String phoneNumber, String address) {
+    public NewCustomerDto(String firstName, String lastName, String age,String phoneNumber, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
