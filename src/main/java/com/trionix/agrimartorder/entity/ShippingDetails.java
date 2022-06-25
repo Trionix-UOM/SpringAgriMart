@@ -1,7 +1,10 @@
 package com.trionix.agrimartorder.entity;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
+@AllArgsConstructor
 @Document("ShippingDetail")
 @Data
 public class ShippingDetails {
