@@ -4,6 +4,8 @@ import com.trionix.agrimartorder.entity.Cart;
 import com.trionix.agrimartorder.entity.Product;
 import com.trionix.agrimartorder.repository.CartRepository;
 import com.trionix.agrimartorder.repository.ProductRepository;
+import com.trionix.agrimartorder.security.CurrentUser;
+import com.trionix.agrimartorder.security.UserPrincipal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +19,7 @@ public class CartController {
     private final CartRepository cartRepository;
     private final ProductRepository productRepository;
     @PostMapping("/receiveToCart")
-    public String createCart(@RequestBody CartDto body)
+    public String createCart(@RequestBody CartDto body, @CurrentUser UserPrincipal currentUser)
     {
         Optional<Cart> byProductProductId = cartRepository.findByProductProductId(body.getProductId());
         if(byProductProductId.isPresent()){
