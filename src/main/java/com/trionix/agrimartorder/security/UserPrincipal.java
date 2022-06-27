@@ -11,6 +11,7 @@ import java.util.Map;
 
 @Data
 public class UserPrincipal implements UserDetails {
+    public Object getId;
     @JsonProperty
     private String  id;
     @JsonProperty

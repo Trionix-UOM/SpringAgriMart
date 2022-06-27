@@ -11,8 +11,11 @@ import com.trionix.agrimartorder.repository.UserRepository;
 import com.trionix.agrimartorder.security.UserPrincipal;
 import com.trionix.agrimartorder.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +24,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
+@Slf4j
 public class AuthenticationServiceImpl implements AuthenticationService {
 
     private final FirebaseAuth firebaseAuth;
@@ -48,9 +52,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                     .setEmail(signupDto.getEmail())
                     .setEmailVerified(true)
                     .setPassword(signupDto.getPassword())
-                    .setPhoneNumber(signupDto.getPhoneNo())
                     .setDisplayName(signupDto.getFullName())
-                    .setDisabled(true);
+                    .setDisabled(false);
 
             userRecord = firebaseAuth.createUser(request);
 
@@ -69,7 +72,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         } catch (Exception e) {
             if(userRecord != null)
                 userRepository.deleteById(userRecord.getUid());
-            throw new RuntimeException(e);
+            log.error(null, e);
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST,e.getMessage());
         }
     }
 

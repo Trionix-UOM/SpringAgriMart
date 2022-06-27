@@ -21,6 +21,7 @@ public class CartController {
     @PostMapping("/receiveToCart")
     public String createCart(@RequestBody CartDto body, @CurrentUser UserPrincipal currentUser)
     {
+        currentUser.getId();
         Optional<Cart> byProductProductId = cartRepository.findByProductProductId(body.getProductId());
         if(byProductProductId.isPresent()){
             Cart cart = byProductProductId.get();
