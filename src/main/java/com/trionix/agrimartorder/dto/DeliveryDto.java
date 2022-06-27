@@ -1,18 +1,20 @@
 package com.trionix.agrimartorder.dto;
 
+import org.springframework.data.annotation.Id;
+
 public class DeliveryDto {
+    @Id
+    private String deliveryId;
     private String orderId;
-    private String trackingNo;
     private String estimatedTime;
     private String Dstatus;
-
 
     public DeliveryDto() {
     }
 
-    public DeliveryDto(String orderId, String trackingNo, String estimatedTime, String dStatus) {
+    public DeliveryDto(String deliveryId,String orderId,  String estimatedTime, String dStatus) {
+        this.deliveryId = deliveryId;
         this.orderId = orderId;
-        this.trackingNo = trackingNo;
         this.estimatedTime = estimatedTime;
         this.Dstatus = Dstatus;
     }
@@ -25,14 +27,13 @@ public class DeliveryDto {
         this.orderId = orderId;
     }
 
-    public String getTrackingNo() {
-        return trackingNo;
+    public String getDeliveryId() {
+        return deliveryId;
     }
 
-    public void setTrackingNo(String trackingNo) {
-        this.trackingNo = trackingNo;
+    public void setDeliveryId(String deliveryId) {
+        this.deliveryId = deliveryId;
     }
-
 
     public String getEstimatedTime() {
         return estimatedTime;
@@ -46,7 +47,8 @@ public class DeliveryDto {
         return Dstatus;
     }
 
-    public void setDstatus(String dStatus) {
+    public void setDstatus(String Dstatus) {
         this.Dstatus = Dstatus;
     }
+
 }

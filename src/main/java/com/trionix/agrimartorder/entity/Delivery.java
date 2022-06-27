@@ -4,18 +4,17 @@ import org.springframework.data.annotation.Id;
 
 public class Delivery {
     @Id
+    private String deliveryId;
     private String orderId;
-
-    private String trackingNo;
     private String estimatedTime;
     private String Dstatus;
 
     public Delivery() {
     }
 
-    public Delivery(String orderId, String trackingNo, String estimatedTime, String dStatus) {
+    public Delivery(String deliveryId,String orderId,  String estimatedTime, String dStatus) {
+        this.deliveryId = deliveryId;
         this.orderId = orderId;
-        this.trackingNo = trackingNo;
         this.estimatedTime = estimatedTime;
         this.Dstatus = Dstatus;
     }
@@ -28,14 +27,13 @@ public class Delivery {
         this.orderId = orderId;
     }
 
-    public String getTrackingNo() {
-        return trackingNo;
+    public String getDeliveryId() {
+        return deliveryId;
     }
 
-    public void setTrackingNo(String trackingNo) {
-        this.trackingNo = trackingNo;
+    public void setDeliveryId(String deliveryId) {
+        this.deliveryId = deliveryId;
     }
-
 
     public String getEstimatedTime() {
         return estimatedTime;
