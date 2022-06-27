@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cart {
+    @DBRef
+    private User user;
     @Id
     private String cardId;
 

@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @Configuration
 public class FirebaseConfig {
-
+    //get property value to firebase app
     @Value("${app.firebase-config}")
     private String firebaseConfig;
 

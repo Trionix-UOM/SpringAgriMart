@@ -24,6 +24,12 @@ public class ShippingDetailsController {
 
     }
 
+//    @PostMapping("/createShipping")
+//    public String createShippingDetails(@CurrentUser UserPrincipal currentUser)
+//    {
+//        currentUser.getId;
+//    }
+
     @PostMapping("/createShipping")
     public ResponseEntity<ShippingDetails> createOrders(@RequestBody ShippingDetails ShippingDetailsDto) {
         ShippingDetails shippingDetails=new ShippingDetails();

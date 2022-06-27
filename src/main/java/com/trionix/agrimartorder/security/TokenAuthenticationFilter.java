@@ -1,7 +1,7 @@
 package com.trionix.agrimartorder.security;
 
 
-import com.trionix.agrimartorder.exception.UnauthorizedException;
+import com.trionix.agrimartorder.exception.NoTokenException;
 import com.trionix.agrimartorder.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +33,14 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
                     authentication = null;
             try {
                 String header = request.getHeader(HttpHeaders.AUTHORIZATION);
+                if(header == null){
+                    throw new NoTokenException();
+                }
                 String[] bearer_s = header.split("Bearer ");
 
 
                 if (bearer_s.length != 2) {
-                    throw new UnauthorizedException("Token is not found");
+                    throw new NoTokenException();
                 }
                 UserPrincipal userPrincipal = authService.validateToken(bearer_s[1]);
                 authentication =
@@ -54,7 +57,11 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
                 logger.info("User logged in without access token : " + e.getMessage());
                 throw e;
             }
-        } catch (Exception ex) {
+        } catch (NoTokenException ex) {
+
+            filterChain.doFilter(request, response);
+        }
+        catch (Exception ex) {
             logger.error("User could not be authenticated in user service.", ex);
             filterChain.doFilter(request, response);
         }
